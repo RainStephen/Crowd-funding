@@ -42,9 +42,9 @@ public class DispatcherController {
 		paramMap.put("loginacct", loginacct);
 		paramMap.put("userpswd", userpswd);
 		paramMap.put("type", type);		
-	//	User user = userService.queryUserlogin(paramMap);
+		User user = userService.queryUserlogin(paramMap);
 		
-		//session.setAttribute(Const.LOGIN_USER, user);
+		session.setAttribute(Const.LOGIN_USER, user);
 		
 		return "redirect:/main.do";
 	}

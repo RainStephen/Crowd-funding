@@ -19,7 +19,7 @@
         <dependent-module archiveName="Atcrowdfunding-potal-impl-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Atcrowdfunding-potal-impl/Atcrowdfunding-potal-impl">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <property name="context-root" value="Atcrowdfunding-main"/>
+		<property name="context-root" value="Atcrowdfunding-main" />
         <property name="java-output-path" value="/Atcrowdfunding-main/target/classes"/>
     </wb-module>
 </project-modules>
