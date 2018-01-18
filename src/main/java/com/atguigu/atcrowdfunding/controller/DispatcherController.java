@@ -27,11 +27,17 @@ public class DispatcherController {
 	public String login(){		
 		return "login";
 	}
-	
+
+	//跳转到管理员主页面
 	@RequestMapping("/main")
 	public String main(){		
 		return "main";
 	}
+	@RequestMapping("/goto_login")
+	public String goto_login(){
+		return "login";
+	}
+	
 	
 	/*
 	 * 处理登录请求

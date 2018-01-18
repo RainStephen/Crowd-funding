@@ -8,8 +8,17 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
+
+    <context:component-scan base-package="com.atguigu.atcrowdfunding.*" use-default-filters="false">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
     <!-- 启用注解功能 -->
     <context:annotation-config />
+    
+    <!-- <mvc:annotation-driven /> -->
+    <!-- <mvc:default-servlet-handler /> -->
+    
     
     <!-- 字符串字符编码转换 -->
     <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" >
@@ -18,6 +27,7 @@
 	             <bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">   
 	                <property name="supportedMediaTypes">
 	                      <list>
+	                      	<!--  response.setContentType("application/json;charset=UTF-8"); -->
 	                          <value>application/json;charset=UTF-8</value>
 	                     </list>   
 	                </property>   
@@ -26,9 +36,7 @@
 	    </property>
     </bean>
     
-    <context:component-scan base-package="com.atguigu.atcrowdfunding.*" use-default-filters="false">
-        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
-    </context:component-scan>
+
 	
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"></property>
@@ -36,11 +44,12 @@
         <property name="suffix" value=".jsp"></property>
     </bean>
     
-    <bean id="exceptionResolver"  
-        class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">  
+    <bean id="exceptionResolver"   class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver"> 
+    	<property name="exceptionAttribute" value="exception"/>
         <property name="exceptionMappings">  
-            <props>
+            <props>            	
                 <prop key="java.lang.Exception">error/error</prop>
+                <prop key="com.atguigu.atcrowdfunding.exception.LoginFailException">login</prop>
             </props>  
         </property>  
     </bean>

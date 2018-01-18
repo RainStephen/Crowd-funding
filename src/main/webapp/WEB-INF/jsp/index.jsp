@@ -75,7 +75,7 @@
 
 /* 文章列表 */
 .newsList{padding:10px;text-align:left;}
-.newsList li{background:url("../images/share/point.png") no-repeat 2px 14px; padding-left:10px;height:30px; line-height:30px;}
+/*.newsList li{background:url("${APP_PATH}/images/share/point.png") no-repeat 2px 14px; padding-left:10px;height:30px; line-height:30px;}*/
 .newsList li a{display:inline-block;*display:inline;zoom:1;font-size:14px;}
 .newsList li .date{float:right; color:#999;}
 .newsList li.split{margin-bottom:10px;padding-bottom:10px;border-bottom:1px dotted #ddd;height:0px;line-height:0px;overflow:hidden;}
@@ -108,7 +108,7 @@ h3.break>a {
 				</div>
             <div id="navbar" class="navbar-collapse collapse" style="float:right;">
               <ul class="nav navbar-nav navbar-right">
-                <li><a href="${APP_PATH }/login.htm">登录</a></li>
+                <li><a href="${APP_PATH }/goto_login.do">登录</a></li>
                 <li><a href="reg.html">注册</a></li>
               </ul>
             </div>

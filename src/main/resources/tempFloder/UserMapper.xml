@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "http://mybatis.org/dtd/mybatis-3-mapper.dtd" "mybatis-3-mapper.dtd" >
+<mapper>
+  <cache-ref namespace="com.atguigu.atcrowdfunding.manager.dao.UserMapper"/>
+  	
+  	<select id="queryUserlogin" parameterType="map" resultMap="com.atguigu.atcrowdfunding.bean.User">
+  		select * from t_user where loginacct = #{loginacct} and userpswd= #{userpswd}
+  	</select>
+  
+</mapper>
